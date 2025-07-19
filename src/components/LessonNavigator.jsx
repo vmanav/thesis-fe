@@ -1,13 +1,30 @@
+import classnames from 'classnames';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleDoubleLeft, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons'
+
+import styles from './LessonNavigator.module.css'
+
 const LessonNavigator = ({
-    nextLesson, prevLesson, runCode,
+    nextLesson, prevLesson, nextPresent = true, prevPresent = true
 }) => (
-    <>
-        <div className="nav-buttons">
-            <button onClick={prevLesson}>⏪ Prev</button>
-            <button onClick={runCode}>▶ Run Code</button>
-            <button onClick={nextLesson}>Next ⏩</button>
-        </div>
-    </>
+    <div className={styles.navRoot}>
+        <button
+            className={classnames(styles.button, styles.borderRight)}
+            onClick={prevLesson}
+            disabled={!prevPresent}
+        >
+            <FontAwesomeIcon icon={faAngleDoubleLeft} />
+            <span>Previous Lecture</span>
+        </button>
+        <button
+            className={classnames(styles.button, styles.borderLeft)}
+            onClick={nextLesson}
+            disabled={!nextPresent}
+        >
+            <span>Next Lecture</span>
+            <FontAwesomeIcon icon={faAngleDoubleRight} />
+        </button>
+    </div>
 );
 
 export default LessonNavigator;

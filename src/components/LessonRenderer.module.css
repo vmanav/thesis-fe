@@ -1,0 +1,12 @@
+.root {
+    background-color: var(--accent-light);
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.title {
+    color: var(--bg-dark);
+    margin-top: 0 !important;
+    margin-top: 15px;
+    text-align: center;
+}
