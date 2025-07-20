@@ -24,9 +24,9 @@
 }
 
 .borderRight {
-    border-right: 2px solid var(--accent-light);
+    border-right: 1px solid var(--accent-light);
 }
 
 .borderLeft {
-    border-left: 2px solid var(--accent-light);
+    border-left: 1px solid var(--accent-light);
 }
