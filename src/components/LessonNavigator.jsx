@@ -5,7 +5,10 @@ import { faAngleDoubleLeft, faAngleDoubleRight } from '@fortawesome/free-solid-s
 import styles from './LessonNavigator.module.css'
 
 const LessonNavigator = ({
-    nextLesson, prevLesson, nextPresent = true, prevPresent = true
+    nextLesson,
+    prevLesson,
+    nextPresent = true,
+    prevPresent = true
 }) => (
     <div className={styles.navRoot}>
         <button
@@ -14,14 +17,14 @@ const LessonNavigator = ({
             disabled={!prevPresent}
         >
             <FontAwesomeIcon icon={faAngleDoubleLeft} />
-            <span>Previous Lecture</span>
+            <span>Previous</span>
         </button>
         <button
             className={classnames(styles.button, styles.borderLeft)}
             onClick={nextLesson}
             disabled={!nextPresent}
         >
-            <span>Next Lecture</span>
+            <span>Next</span>
             <FontAwesomeIcon icon={faAngleDoubleRight} />
         </button>
     </div>
