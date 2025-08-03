@@ -1,28 +1,31 @@
-import dedent from 'dedent';
-
 export const introduction = {
     title: "Introduction",
-    content: dedent(`
+    content:
+        `
 Let' start with the very first program in any programming language, the "Hello, world!", here is a sample code for this program.
+
 ~~~
 fn main() {
     println!("Hello World!");
 }
 ~~~
-Let’s review this “Hello, world!” program in detail. Here’s the first piece of the puzzle:
+Now let’s deep dive into this piece of code in detail. Here’s the first building block:
+
 ~~~
 fn main() {
 }
 ~~~
-These lines define a function named main. The main function is special: it is always the first code that runs in every executable Rust program. Here, the first line declares a function named main that has no parameters and returns nothing. If there were parameters, they would go inside the parentheses ().
-The function body is wrapped in {}. Rust requires curly brackets around all function bodies. It’s good style to place the opening curly bracket on the same line as the function declaration, adding one space in between.
+This is the main function which is the startting point of a Rust program. The \`fn\` keyword defines it and it does not take any parameters and also does not return any values.
+Next, a pair of curly braces (\`{}\`) are used to wrap the body of the main function in it.
+
 ~~~
 println!("Hello, world!");
 ~~~
-This line does all the work in this little program: it prints text to the screen. There are three important details to notice here.
-First, println! calls a Rust macro. If it had called a function instead, it would be entered as println (without the !). Second, you see the "Hello, world!" string. We pass this string as an argument to println!, and the string is printed to the screen.
-Third, we end the line with a semicolon (;), which indicates that this expression is over and the next one is ready to begin. Most lines of Rust code end with a semicolon.
-`),
+And then, this line does all the magic. The \`println!\` used here is not a function call but actually a macro (notice there is an exclamation mark ! after it). This macro prints whatever string is passed to it, in this case a "Hello World!" enclosed in double quotes.
+Finally, we have added a semicolon (\`;\`) at the end which indicates that the expression is complete and we can move to the next one.
+
+#### Now, lets move on to the next lesson where we will learn about variables and data types.
+`,
     baseCode: `fn main() {
     println!("Hello, world!");
 }
