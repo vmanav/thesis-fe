@@ -7,7 +7,6 @@ import styles from './IndexTable.module.css'
 
 const IndexTable = ({ lessons, openIndex, onClick }) => {
     const [isOpen, setIsOpen] = useState(false);
-    console.log("isOpen", isOpen);
 
     const handleClick = useCallback((index) => {
         onClick(index);
