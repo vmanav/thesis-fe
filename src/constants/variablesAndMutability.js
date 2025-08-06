@@ -41,8 +41,6 @@ fn main() {
     // Age: 30
 }
 ~~~
-
-
 `,
     baseCode: `let name = "Harry";
     println!("My name is {}", name);
@@ -55,95 +53,27 @@ fn main() {
 `,
     examples: [
         {
-            title: "Sum from 1 to N",
-            code: `use std::io;
+            title: "Basic data types and their usages",
+            code: `
 fn main() {
-    let mut input = String::new();
-    println!("Enter a number to find sum from 1 to that number");
-    io::stdin().read_line(&mut input).expect("Failed to read line");
-    let number: i32 = input.trim().parse().expect("Failed to parse line");
-    println!("Number you enetered: {}", number);
-    let mut sum = 0;
-    for x in 1..(number + 1) {
-        sum += x;
-    }
-    println!("Sum (calculated from loop) = {}", sum);
-    println!("Sum (calculated from formula) = {}", number * (number + 1) / 2);
-}`
+
+    let model: i32 = 2025;
+    println!("Model: {}", model);
+    // Model: 2025
+
+    let engine: f64 = 5.8;
+    println!("Engine: {}", engine);
+    // Engine: 5.8
+
+    let is_turbocharged: bool = true;
+    println!("Is Turbocharged: {}", is_turbocharged);
+    // Is Turbocharged: true
+
+    let engine_type: char = 'V';
+    println!("Engine Type: {}", engine_type);
+    // Engine Type: V
+}
+`
         },
-        {
-            title: "Circular Area with Radius as Input",
-            code: `use std::io;
-
-fn main(){
-    let mut input = String::new();
-    let pie = 3.14;
-    println!("Enter the radius ?");
-    io::stdin().read_line(&mut input).expect("Failed to read line");
-
-    let number: f32 = input.trim().parse().expect("Failed to parse line");
-    println!("Number: {}", number);
-    let area = pie * number * number;
-    println!("Area = {}", area);
-}`
-        },
-        {
-            title: "Convert total time to seconds",
-            code: `use std::io;
-
-fn main() {
-    let sec = 60;
-    let mut days = String::new();
-    println!("Enter days ?");
-    io::stdin().read_line(&mut days).expect("Failed to read line");
-    let daysParsed: i32 = days.trim().parse().expect("Failed to parse line");
-    
-    println!("Enter hours ?");
-    let mut hours = String::new();
-    io::stdin().read_line(&mut hours).expect("Failed to read line");
-    let hoursParsed: i32 = hours.trim().parse().expect("Failed to parse line");
-    
-    println!("Enter minutes ?");
-    let mut minutes = String::new();
-    io::stdin().read_line(&mut minutes).expect("Failed to read line");
-    let minutesParsed: i32 = minutes.trim().parse().expect("Failed to parse line");
-    
-    println!("Enter seconds ?");
-    let mut seconds = String::new();
-    io::stdin().read_line(&mut seconds).expect("Failed to read line");
-    let secondsParsed: i32 = seconds.trim().parse().expect("Failed to parse line");
-
-    let total_time = secondsParsed  + minutesParsed * sec + hoursParsed * sec * sec * sec;
-    println!("Total time: {} seconds", total_time);
-}`
-        }
-        , {
-            title: "Min, Max and Middle of three Inputs",
-            code: `use std::io;
-use std::cmp;
-
-fn main() {
-    let sec = 60;
-    let mut first = String::new();
-    println!("Enter first number ?");
-    io::stdin().read_line(&mut first).expect("Failed to read line");
-    let a: i32 = first.trim().parse().expect("Failed to parse line");
-
-    let mut second = String::new();
-    println!("Enter second number ?");
-    io::stdin().read_line(&mut second).expect("Failed to read line");
-    let b: i32 = second.trim().parse().expect("Failed to parse line");
-
-    let mut third = String::new();
-    println!("Enter third number ?");
-    io::stdin().read_line(&mut third).expect("Failed to read line");
-    let c: i32 = third.trim().parse().expect("Failed to parse line");
-  
-    let minimum = cmp::min(a, cmp::min(b, c));
-    let maximum = cmp::max(a, cmp::max(b, c));
-    let middle = a + b + c - minimum - maximum;
-    println!("Min: {}, Max: {}, Middle: {}.", minimum, maximum, middle);
-}`
-        }
     ]
 }

@@ -2,7 +2,7 @@ export const introduction = {
     title: "Introduction",
     content:
         `
-Let' start with the very first program in any programming language, the "Hello, world!", here is a sample code for this program.
+Let's start with the very first program in any programming language, the "Hello, world!", here is a sample code for this program.
 
 ~~~
 fn main() {
