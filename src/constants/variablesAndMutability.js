@@ -9,7 +9,7 @@ println!("value of var is: {}", var);
 ~~~
 
 This is a basic variable declaration, which by default sets the variable as immutable.
-Now, if we try to change the value of \`var\` to lets say 6, it will give us an error saying: 
+Now, if we try to change the value of \`var\` to lets say 6, it will give us an error (*Give the sample code a try*): 
 
 ~~~
 var = 6;
@@ -42,15 +42,15 @@ fn main() {
 }
 ~~~
 `,
-    baseCode: `let name = "Harry";
-    println!("My name is {}", name);
-
-    let mut age = 25;
-    println!("My age is {}", age);
-    age = 26;
-    println!("My age is {}", age);
-
-`,
+    baseCode: `
+fn main() {
+    let var = 5;
+    println!("value of var is: {}", var);
+    var = 6;
+    println!("value of var is: {}", var);
+}
+    `
+    ,
     examples: [
         {
             title: "Basic data types and their usages",
@@ -75,5 +75,6 @@ fn main() {
 }
 `
         },
-    ]
+    ],
+    footer: `**Now, lets move on to the next lesson where we learn about handling user inputs from the terminal.**`
 }

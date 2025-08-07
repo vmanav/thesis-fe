@@ -1,9 +1,9 @@
 import { introduction } from './introduction';
-import { variablesAndInputs } from './variablesAndInputs';
 import { variablesAndMutability } from './variablesAndMutability';
+import { userInputs } from './userInputs';
 
 export const lessonData = [
     introduction,
     variablesAndMutability,
-    variablesAndInputs,
+    userInputs,
 ];
