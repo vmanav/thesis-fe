@@ -5,6 +5,17 @@ import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
 
 import styles from './IndexTable.module.css'
 
+const fakeLessons = [
+    { title: 'Introduction' },
+    { title: 'Variables and Mutability' },
+    { title: 'Handling User Inputs' },
+    { title: 'Control Flow' },
+    { title: 'Functions' },
+    { title: 'Ownership in Rust' },
+    { title: 'Errors and Error Handling' },
+    { title: 'Lifetimes in Rust' }
+]
+
 const IndexTable = ({ lessons, openIndex, onClick }) => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -37,6 +48,14 @@ const IndexTable = ({ lessons, openIndex, onClick }) => {
                         <li
                             key={index}
                             onClick={() => handleClick(index)}
+                        >
+                            {lesson.title}
+                        </li>
+                    ))}
+                    {fakeLessons.map((lesson, index) => (
+                        <li
+                            key={`${index}_f`}
+                            className={styles.dummyLesson}
                         >
                             {lesson.title}
                         </li>

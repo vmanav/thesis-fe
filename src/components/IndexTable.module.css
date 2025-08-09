@@ -55,3 +55,7 @@
         font-style: italic;
     }
 }
+
+.dummyLesson {
+    cursor: not-allowed !important;
+}
