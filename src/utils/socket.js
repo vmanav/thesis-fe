@@ -21,7 +21,7 @@ export function createSocket(
             onInputPrompt(true)
         } else if (socketData.type === socketDataTypes.OUTPUT) {
             onMessage(socketData.content);
-        } else if (socketData.type === socketDataTypes.STDERR) {
+        } else if ([socketDataTypes.ERROR, socketDataTypes.STDERR].includes(socketData.type)) {
             onError(socketData.message);
         } else if (socketData.type === socketDataTypes.EXECUTED) {
             onComplete();
