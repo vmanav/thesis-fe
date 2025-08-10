@@ -34,6 +34,7 @@ function App() {
   const handleRunClick = () => {
     setInputRequired(false);
     setOutput("");
+
     socketReference.current = createSocket(
       code,
       (content) => setOutput(prev => prev + content),
