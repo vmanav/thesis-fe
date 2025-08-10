@@ -1,14 +1,16 @@
 import { socketDataTypes } from "../constants/socketDataTypes";
 
+const socketUrl = process.env.REACT_APP_SOCKET_URL || "ws://localhost:8000/execute";
+
 export function createSocket(
     code,
-    onMessage,
-    onInputPrompt,
-    onComplete,
-    onError,
+    handleOnMessage,
+    handleOnInput,
+    handleOnComplete,
+    handleOnError,
     setHasError
 ) {
-    const sock = new WebSocket("ws://localhost:8000/execute");
+    const sock = new WebSocket(socketUrl);
 
     sock.onopen = () => {
         sock.send(JSON.stringify({ code }));
@@ -18,13 +20,13 @@ export function createSocket(
         setHasError(false);
         const socketData = JSON.parse(data);
         if (socketData.type === socketDataTypes.INPUT_PROMPT) {
-            onInputPrompt(true)
+            handleOnInput(true)
         } else if (socketData.type === socketDataTypes.OUTPUT) {
-            onMessage(socketData.content);
+            handleOnMessage(socketData.content);
         } else if ([socketDataTypes.ERROR, socketDataTypes.STDERR].includes(socketData.type)) {
-            onError(socketData.message);
+            handleOnError(socketData.message);
         } else if (socketData.type === socketDataTypes.EXECUTED) {
-            onComplete();
+            handleOnComplete();
             sock.close();
         }
     };
