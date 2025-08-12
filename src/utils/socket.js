@@ -1,6 +1,6 @@
 import { socketDataTypes } from "../constants/socketDataTypes";
 
-const socketUrl = process.env.REACT_APP_SOCKET_URL || "ws://localhost:8000/execute";
+const baseUrl = process.env.REACT_APP_SOCKET_URL || "ws://localhost:8000/execute";
 
 export function createSocket(
     code,
@@ -10,7 +10,7 @@ export function createSocket(
     handleOnError,
     setHasError
 ) {
-    const sock = new WebSocket(socketUrl);
+    const sock = new WebSocket(`${baseUrl.replace('http', 'ws')}/execute`);
 
     sock.onopen = () => {
         sock.send(JSON.stringify({ code }));
