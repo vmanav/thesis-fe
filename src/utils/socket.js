@@ -10,7 +10,7 @@ export function createSocket(
     handleOnError,
     setHasError
 ) {
-    const sock = new WebSocket(`${baseUrl.replace('http', 'ws')}/execute`);
+    const sock = new WebSocket(`${baseUrl.replace('https', 'ws')}/execute`);
 
     sock.onopen = () => {
         sock.send(JSON.stringify({ code }));
