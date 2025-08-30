@@ -1,6 +1,6 @@
 import { socketDataTypes } from "../constants/socketDataTypes";
 
-const baseUrl = process.env.REACT_APP_SOCKET_URL || "ws://localhost:8000/execute";
+const baseUrl = process.env.REACT_APP_SOCKET_URL || "ws://localhost:8000/";
 
 export function createSocket(
     code,
